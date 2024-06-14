@@ -37,7 +37,7 @@ from pymongo import UpdateOne, DeleteOne, InsertOne
 from pymongo.errors import ConnectionFailure, BulkWriteError
 from pymongo.periodic_executor import PeriodicExecutor
 
-from pymdict.mongo_query_parser import MongoQueryParser
+from mongo_query_parser import MongoQueryParser
 
 
 # Special collection for tracking information of mongo dictionaries, like forks families and versioning.
