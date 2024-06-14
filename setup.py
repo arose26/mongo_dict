@@ -35,7 +35,7 @@ if sys.version_info < (3, 4, 1):
 from setuptools import setup
 # Define the package metadata
 name = 'mongo_dict'
-version = 0.0.3
+version = '0.0.3'
 description = 'Use mongo through python dicts'
 author = 'Alan Rose'
 author_email = 'your_email@example.com'
