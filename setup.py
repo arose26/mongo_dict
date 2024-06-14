@@ -22,48 +22,44 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import sys
-from setuptools import setup, setuptools
-from mongo_dict import __version__
-
-
 __author__ = 'Alan Rose'
 
 
 def readme():
-    with open('README.rst', encoding="UTF-8") as f:
-        return f.read()
+	return 'readme'
 
-
+import sys
 if sys.version_info < (3, 4, 1):
     sys.exit('Python < 3.4.1 is not supported!')
 
+from setuptools import setup
+from mongo_dict import __version__
+# Define the package metadata
+name = 'mongo_dict'
+version = __version__
+description = 'Use mongo through python dicts'
+author = 'Alan Rose'
+author_email = 'your_email@example.com'
+url = 'https://github.com/arose26/mongo_dict'
 
-setup(name='mongo_dict',
-      version=__version__,
-      description='Python Mongo-Dict, a dictionary-like class automatically stored in mongo, with query capabilities.',
-      long_description=readme(),
-      url='http://github.com/arose26/mongo_dict',
-      author='Alan Rose',
-      author_email='',
-      license='MIT',
-      packages=setuptools.find_packages(),
-      install_requires=[
-          "pymongo"
-      ],
-      classifiers=[
-          'Environment :: Console',
-          'Intended Audience :: Developers',
-          'Intended Audience :: Education',
-          'Intended Audience :: Science/Research',
-          'Natural Language :: English',
-          'Programming Language :: Python :: 3.4',
-          'Programming Language :: Python :: 3.5',
-          'Programming Language :: Python :: 3.6',
-          'Programming Language :: Python :: 3.7',
-      ],
-      test_suite='nose.collector',
-      tests_require=['nose'],
-      include_package_data=True,
-      keywords="",
-      zip_safe=False)
+# Define the dependencies
+install_requires = [
+    'pymongo'
+]
+
+# Define the package structure
+packages = ['mongo_dict']
+
+
+
+# Define the setup
+setup(
+    name=name,
+    version=version,
+    description=description,
+    author=author,
+    author_email=author_email,
+    url=url,
+    packages=packages,
+    install_requires=install_requires,
+)
