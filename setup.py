@@ -33,10 +33,9 @@ if sys.version_info < (3, 4, 1):
     sys.exit('Python < 3.4.1 is not supported!')
 
 from setuptools import setup
-from mongo_dict import __version__
 # Define the package metadata
 name = 'mongo_dict'
-version = __version__
+version = 0.0.3
 description = 'Use mongo through python dicts'
 author = 'Alan Rose'
 author_email = 'your_email@example.com'
